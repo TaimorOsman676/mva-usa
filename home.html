@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  <head itemscope itemtype="https://schema.org/WebSite">
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+
+    <!--<link rel="stylesheet" href="style.css">-->
+
+    <style>
+      /* media queries */
+
+      /* .logo{ */
+      /* margin-top: 2rem; */
+      /* } */
+      img.logo {
+        width: 14.8rem;
+        height: 3.9rem;
+        /* margin-top: 1rem; */
+      }
+      a.nav-link.active {
+        /* color: #546E7A; */
+        /* color: white; */
+        color: black;
+        text-decoration: underline;
+        font-weight: 500;
+        font-family: "Lato", Sans-serif;
+        /* font-family: poppins; */
+        font-size: 14px;
+        padding-left: 50rem;
+      }
+      a.nav-link.active:hover {
+        /*text-decoration:none;*/
+        color: #ff8200;
+      }
+
+      /* .main {
+} */
+      .fa-solid {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+      }
+      div#pb-1 {
+        float: right;
+      }
+      i.fa-solid.fa-phone {
+        margin-top: 3rem;
+      }
+      .fa-regular {
+        font-size: 2rem;
+        margin-right: 1rem;
+        margin-top: 3rem;
+      }
+      .phone-bar {
+        /*padding-right: 2rem;*/
+
+        /* border-left: 1px solid black; */
+      }
+      .email-bar {
+        padding-left: 2rem;
+      }
+
+      /* background image plus overlay */
+
+      .page-content {
+        /* background-image: url("images/bg-pic.jpg"); */
+        background: url("images/11.jpg") rgb(53 38 12 / 0.7);
+        background-blend-mode: multiply;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* background-size: 1583px 760px; */
+        padding: 5rem 2rem 5rem 2rem;
+      }
+      .text {
+        margin-top: 0rem;
+        padding-top: 5rem;
+        padding-left: 2rem;
+        padding-right: 1rem;
+      }
+      .form-control {
+        font-size: 14px;
+        width: 23rem;
+        border-radius: 25px;
+        color: #999;
+      }
+      .form {
+        padding: 4rem 3rem 4rem 3rem;
+        /* background: rgba(0,0,0,.6); */
+        background: rgb(106 65 25 / 41%);
+        margin-left: 5rem;
+      }
+      input.btn.btn-primary {
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        margin-left: 5rem;
+        color: black;
+        border-color: black;
+        background-color: white;
+        font-family: "Poppins", sans-serif;
+        border-radius: 25px;
+      }
+      input.btn.btn-primary:hover {
+        background-color: black;
+        color: white;
+        border-color: white;
+        border-width: 2px;
+      }
+      .our-clients {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+      .client-header {
+        padding-bottom: 1rem;
+      }
+      label.form-check-label {
+        color: white;
+        font-family: "Muli", sans-serif;
+        font-size: 10px;
+      }
+      .footer-content {
+        background-color: #513f2de3;
+        color: #fff;
+        padding: 3rem 0rem 6rem 0rem;
+        border-bottom: 1px solid #323232;
+        text-align: justify;
+      }
+      .copyright {
+        /* background-color: #272727; */
+        background-color: #46310dc9;
+        color: #ffffff;
+        padding: 2rem 0rem 2rem 1rem;
+      }
+      h2.h2-title {
+        font-size: 16px;
+        font-weight: bold;
+        font-family: "Poppins", sans-serif;
+      }
+      .p1-title {
+        font-family: "Muli", sans-serif;
+        font-size: 17px;
+        line-height: 1.65em;
+        text-align: justify;
+      }
+      .copyright {
+        font-family: "Muli", sans-serif;
+        font-size: 18px;
+      }
+
+      .f-row {
+        margin-right: 31rem;
+      }
+
+      /* changes */
+      .footer-row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        column-gap: 20px;
+      }
+      .footer-row .footer-column {
+        width: 45%;
+      }
+      /* reponsive web */
+      /* reponsive web */
+
+      @media (max-width: 576px) {
+        .main {
+          display: none;
+        }
+      }
+
+      @media (max-width: 576px) {
+        div#pb-1 {
+          float: none;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .form {
+          /*padding: 4rem 3rem 4rem 3rem;*/
+          padding: 2rem 1rem 3rem 1rem;
+          margin-left: 0rem;
+          /*background: rgb(53 38 12 / 35%);*/
+          background: rgb(106 65 25 / 41%);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .form-control {
+          font-size: 14px;
+          width: 13rem;
+          border-radius: 25px;
+          color: #999;
+        }
+      }
+
+      @media (max-width: 576px) {
+        div#lg-2 {
+          margin-top: -1.5rem;
+        }
+        .text {
+          padding-top: 0rem;
+          padding-left: 0rem;
+          padding-right: 0rem;
+        }
+        div#lg-1 {
+          margin-top: -1.5rem;
+        }
+        input.btn.btn-primary {
+          padding: 0.5rem 1rem 0.5rem 1rem;
+          margin-left: 3rem;
+          color: black;
+          border-color: black;
+          background-color: white;
+          font-family: "Poppins", sans-serif;
+          border-radius: 25px;
+        }
+        .email-bar {
+          padding-left: 1rem;
+        }
+        h2.h2-title {
+          text-align: center;
+        }
+        .p1-title {
+          text-align: justify;
+          padding-bottom: 2rem;
+        }
+        .footer-content {
+          background-color: #513f2de3;
+          color: #fff;
+          padding: 3rem 0rem 0rem 0rem;
+          border-bottom: 1px solid #323232;
+        }
+        .form-control {
+          font-size: 14px;
+          border-radius: 25px;
+          color: #999;
+        }
+        .copyright {
+          /* background-color: #272727; */
+          background-color: #46310dc9;
+          color: #ffffff;
+          padding: 2rem 0rem 2rem 6rem;
+        }
+        .form {
+          /*padding: 4rem 3rem 4rem 3rem;*/
+          padding: 2rem 1rem 3rem 1rem;
+          margin-left: 0rem;
+          background: rgb(106 65 25 / 41%);
+        }
+        div#pb-1 {
+          float: none;
+        }
+        .main {
+          display: none;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .p1-title {
+          text-align: justify;
+          padding-bottom: 2rem;
+        }
+        .p-title {
+          text-align: center;
+          padding-bottom: 2rem;
+        }
+        h2.h2-title {
+          text-align: center;
+        }
+        .email-bar {
+          padding-left: 1rem;
+        }
+        .col-2 {
+          display: none;
+        }
+        .col-3 {
+          display: none;
+        }
+        /* changes */
+        .footer-row {
+          row-gap: 50px;
+        }
+        .footer-row .footer-column {
+          width: 100%;
+          text-align: justify;
+        }
+      }
+
+      .fa-solid {
+        font-size: 0.9rem;
+      }
+    </style>
+    <title>Health-care-explore.com</title>
+  </head>
+  <body
+    onload="hide()"
+    class="home page-template page-template-template-home page-template-template-home-php page page-id-8 wp-custom-logo has-banner"
+    itemscope
+    itemtype="https://schema.org/WebPage"
+  >
+    <!-- Top header -->
+    <div class="top-navbar">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href="index.php">
+              <img
+                class="logo"
+                style="
+                  width: 13pc;
+                  margin-left: 0rem;
+                  margin-top: 8px;
+                  margin-bottom: 9px;
+                "
+                src="images/logo1.png"
+                alt="company logo"
+            /></a>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="nav justify-content-end">
+                <!--<li class="nav-item ">-->
+                <!--  <a class="nav-link active" aria-current="page" href="https://keepingp/">HOME</a>-->
+                <!--</li>-->
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Bootstrap Alert -->
+
+    <!-- page content  -->
+    <div class="page-content">
+      <!-- <div class="bg"> -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <div class="text">
+              <h2 style="color: white; font-family: 'Poppins', sans-serif">
+                Get Better Coverage with Affordable Care Act!
+              </h2>
+              <br />
+
+              <ul style="color: white; font-family: 'Muli', sans-serif">
+                <i class="fa-solid fa-check fa-xs"> </i>
+                Expert guidance to help you maximize savings and find the most
+                affordable healthcare plan.<br />
+                <i class="fa-solid fa-check fa-xs"> </i>
+                Specialized expertise in navigating the Affordable Care Act and
+                finding the best coverage options.<br />
+                <i class="fa-solid fa-check fa-xs"> </i>
+                Access to a network of trusted insurance providers offering
+                competitive rates and exclusive plans.<br />
+                <i class="fa-solid fa-check fa-xs"> </i>
+
+                Personalized assistance in understanding and selecting the most
+                suitable plan from the Health Insurance Marketplace.<br />
+                <i class="fa-solid fa-check fa-xs"> </i>
+
+                Streamlined and user-friendly online enrollment process.<br />
+                <i class="fa-solid fa-check fa-xs"> </i>
+
+                Peace of mind with the right Affordable Care Act plan.<br />
+                <i class="fa-solid fa-check fa-xs"> </i>
+
+                Enroll online or via phone.<br />
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12 col-sm-12">
+            <!-- Form template    is form ki location main active-process py hi rahy gi vesy hi testing k liya change agr krni to kr skty vesy data baijny k liya yahi use ho gi jo data user ka database my b ja rah hai or third party ko b ja raha.....  -->
+            <div class="form" style="border-radius: 22px">
+              <form action="active-process.php" method="POST">
+                <!--<form action="index.php" method="POST">-->
+
+                <h2 style="color: white; font-family: 'Poppins', sans-serif">
+                  Get Your Quote
+                </h2>
+                <br />
+
+                <input
+                  type="name"
+                  name="fname"
+                  class="form-control"
+                  id="exampleInputname"
+                  aria-describedby="emailHelp"
+                  placeholder="First Name"
+                  required
+                /><br />
+                <input
+                  type="name"
+                  name="lname"
+                  class="form-control"
+                  id="exampleInputname"
+                  aria-describedby="emailHelp"
+                  placeholder=" Last Name"
+                  required
+                /><br />
+
+                <input
+                  type="phone"
+                  name="phone"
+                  class="form-control"
+                  id="exampleInputphone"
+                  aria-describedby="emailHelp"
+                  placeholder="Phone"
+                  required
+                /><br />
+                <!-- <input type="email" name="email"   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required><br>-->
+                <!--<input type="text" name="z-code"    class="form-control" id="exampleInputzipcode" aria-describedby="emailHelp" placeholder="Postal Code/Zip Code" required><br> -->
+
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="consent"
+                    value="I agree to it."
+                    id="flexCheckDefault"
+                    required
+                  />
+                </div>
+
+                <br />
+                <input
+                  type="submit"
+                  name="submit"
+                  value="Get Quote"
+                  class="btn btn-primary"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer section  -->
+
+    <div class="footer">
+      <div class="footer-content">
+        <div class="container" style="max-width: 1172px">
+          <!--gave class footer row -->
+          <div class="footer-row">
+            <div class="footer-column">
+              <h2 class="h2-title">About Us</h2>
+              Obamacare Signup Online is a privately-owned non-government
+              website with a singular focus on offering timely and up-to-date
+              information regarding Obamacare. We are not a federal or state
+              marketplace website and don’t directly sell health insurance
+              plans—we are a neutral marketplace powered by seasoned insurance
+              experts, always ready to give customers the necessary guidance and
+              best available quotes.
+              <br /><br />
+              When you fill in the form, you grant permission to authorized
+              insurance agents working with Obamacare Signup Online, or our
+              partners, to contact you regarding further information, costs,
+              coverage, and types of health insurance plans.
+              <br /><br />
+              We are committed to protecting and respecting the privacy of our
+              users. We don’t sell your information and would utilize the
+              information submitted by you only for the purpose you have
+              intended—that is, regarding Obamacare (Affordable Care Act).
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h2 class="h2-title">CONTACT US</h2>
+            <div class="p-title">
+              <p>Email:support@healthcare-explore.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- copyrights -->
+
+    <div class="copyright">
+      <div class="container" style="max-width: 1172px">
+        <div class="row">Copyright 2024 | Health Care Explore</div>
+      </div>
+    </div>
+
+    <!-- TrustedForm -->
+    <script type="text/javascript">
+      (function () {
+        var tf = document.createElement("script");
+        tf.type = "text/javascript";
+        tf.async = true;
+        tf.src =
+          ("https:" == document.location.protocol ? "https" : "http") +
+          "://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&ping_field=xxTrustedFormPingUrl&l=" +
+          new Date().getTime() +
+          Math.random();
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(tf, s);
+      })();
+    </script>
+    <noscript>
+      <img src="https://api.trustedform.com/ns.gif" />
+    </noscript>
+    <!-- End TrustedForm -->
+  </body>
+</html>
