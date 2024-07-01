@@ -17,14 +17,18 @@ if (isset($_POST['submit'])) {
     $phone = test_input($_POST['phone']);
     $state = test_input($_POST['state']);
     $zipcode = test_input($_POST['zipcode']);
-    $has_smartphone = isset($_POST['has_smartphone']) && $_POST['has_smartphone'] === 'yes' ? 'true' : 'false';
+    $has_smartphone = isset($_POST['has_smartphone']) && $_POST['has_smartphone'] === 'yes' ? 'True' : 'False';
+    $has_attorney = isset($_POST['has_attorney']) && $_POST['has_attorney'] === 'yes' ? 'True' : 'False';
+    $hospitalized_or_treated = isset($_POST['hospitalized_or_treated']) && $_POST['hospitalized_or_treated'] === 'yes' ? 'True' : 'False';
+    $person_at_fault = isset($_POST['person_at_fault']) && $_POST['person_at_fault'] === 'yes' ? 'True' : 'False';
+    $police_report = isset($_POST['police_report']) && $_POST['police_report'] === 'yes' ? 'True' : 'False';
+    $incident_date = isset($_POST['incident_date']);
     $trusted = test_input($_POST['xxTrustedFormCertUrl']);
 
-    $sql = "INSERT INTO `mva-usa.com`(`fname`, `lname`,`email`,`has_smartphone` , `phone`, `state`, `zipcode`, `trusted`) VALUES ( '$fname', '$lname','$email', '$has_smartphone' ,'$phone',  '$state', '$zipcode', '$trusted')";
+    $sql = "INSERT INTO `mva-usa.com`(`fname`, `lname`,`email`,`has_smartphone`, `incident_date` , `has_attorney`, `hospitalized_or_treated` ,`person_at_fault`, `police_report` ,`phone`, `state`, `zipcode`, `trusted`) VALUES ( '$fname', '$lname','$email', '$has_smartphone' , '$incident_date', '$has_attorney', '$hospitalized_or_treated' , '$person_at_fault' ,'$police_report','$phone',  '$state', '$zipcode', '$trusted')";
 
 
     if (mysqli_query($conn, $sql)) {
-        // cURL request to Retreaver API
         $retreaver_api_url = 'https://retreaverdata.com/data_writing';
         $retreaver_query_params = array(
             'key' => 'b3394228-14f5-4583-b3c4-ee3ccd5caea8',
@@ -58,13 +62,13 @@ if (isset($_POST['submit'])) {
         $idillo_query_params = array(
             'caller_id' => $phone,
             'first_name' => $fname,
-            'has_attorney' => 'false',
-            'hospitalized_or_treated' => 'true',
-            'incident_date' => 'Within 4 Years',
+            'has_attorney' => $has_attorney,
+            'hospitalized_or_treated' => $hospitalized_or_treated,
+            'incident_date' => $incident_date,
             'last_name' => $lname,
             'lead_token' => 'e6dffc40285d49a1a04a3c3fb8df980d',
-            'person_at_fault' => 'true',
-            'police_report' => 'false',
+            'person_at_fault' => $person_at_fault,
+            'police_report' => $police_report,
             'source_url' => 'https://mva-usa.com',
             'zip' => $zipcode,
         );

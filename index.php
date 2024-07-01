@@ -522,10 +522,6 @@
               <option value="WI">WI</option>
               <option value="WY">WY</option>
             </select>
-
-
-
-
             <br />
             
             
@@ -538,6 +534,23 @@
               aria-describedby="emailHelp"
               placeholder="Zip_code"
             /><br />
+
+            <select
+              name="incident_date"
+              class="form-control"
+              id="exampleInputstate"
+              aria-describedby="emailHelp"
+            >
+              <option value="">Incident Date</option>
+              <option value="Within 1 Year">Within 1 Year</option>
+              <option value="Within 2 Years">Within 2 Years</option>
+              <option value="Within 3 Years">Within 3 Years</option>
+              <option value="Within 4 Years">Within 4 Years</option>
+              <option value="Within 5 Years">Within 5 Years</option>
+              <option value="Within 6 Years">Within 6 Years</option>
+              <option value="Greater Than 6 Years">Greater Than 6 Years</option>
+            </select>
+            <br />
             <!--  <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required><br>-->
             <!--<input type="text" name="z-code" class="form-control" id="exampleInputzipcode" aria-describedby="emailHelp" placeholder="Postal Code/Zip Code" required><br>-->
 
@@ -569,6 +582,131 @@
               >
             </div>
             <br />
+
+            
+
+            <div class="form-check">
+              <input
+                type="radio"
+                name="has_attorney"
+                value="yes"
+                class="form-check-input"
+                id="smartphoneYes"
+                required
+              />
+              <label class="form-check-label" for="smartphoneYes"
+                >Has Attorney</label
+              >
+            </div>
+            
+            <div class="form-check">
+              <input
+                type="radio"
+                name="has_attorney"
+                value="no"
+                class="form-check-input"
+                id="smartphoneNo"
+                required
+              />
+              <label class="form-check-label" for="smartphoneNo"
+                >Don't have a Attorney</label
+              >
+            </div>
+
+            <br />
+
+
+            <div class="form-check">
+              <input
+                type="radio"
+                name="hospitalized_or_treated"
+                value="yes"
+                class="form-check-input"
+                id="smartphoneYes"
+                required
+              />
+              <label class="form-check-label" for="smartphoneYes"
+                >Hospitalized or Treated</label
+              >
+            </div>
+            <div class="form-check">
+              <input
+                type="radio"
+                name="hospitalized_or_treated"
+                value="no"
+                class="form-check-input"
+                id="smartphoneNo"
+                required
+              />
+              <label class="form-check-label" for="smartphoneNo"
+                >Not Hospitalized or Treated</label
+              >
+            </div>
+
+            <br />
+
+          
+
+
+            <div class="form-check">
+              <input
+                type="radio"
+                name="person_at_fault"
+                value="yes"
+                class="form-check-input"
+                id="smartphoneYes"
+                required
+              />
+              <label class="form-check-label" for="smartphoneYes"
+                >Person at fault</label
+              >
+            </div>
+            <div class="form-check">
+              <input
+                type="radio"
+                name="person_at_fault"
+                value="no"
+                class="form-check-input"
+                id="smartphoneNo"
+                required
+              />
+              <label class="form-check-label" for="smartphoneNo"
+                >Not person at fault</label
+              >
+            </div>
+
+            <br />
+
+
+            <div class="form-check">
+              <input
+                type="radio"
+                name="police_report"
+                value="yes"
+                class="form-check-input"
+                id="smartphoneYes"
+                required
+              />
+              <label class="form-check-label" for="smartphoneYes"
+                >Police report</label
+              >
+            </div>
+            <div class="form-check">
+              <input
+                type="radio"
+                name="police_report"
+                value="no"
+                class="form-check-input"
+                id="smartphoneNo"
+                required
+              />
+              <label class="form-check-label" for="smartphoneNo"
+                >No police report</label
+              >
+            </div>
+
+            <br />
+
             
             
 
