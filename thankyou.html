@@ -1,149 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Thank You</title>
-    
+
     <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1260057934900430');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1260057934900430&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "1260057934900430");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1260057934900430&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+  </head>
 
-</head>
-
-<style>
+  <style>
     .thankyou-wrapper {
-  width: 100%;
-  height: auto;
-  margin: auto;
-  background: #ffffff;
-  padding: 10px 0px 50px;
-}
+      width: 100%;
+      height: auto;
+      margin: auto;
+      background: #ffffff;
+      padding: 10px 0px 50px;
+    }
 
-.thankyou-wrapper h1 {
-  font: 100px Arial, Helvetica, sans-serif;
-  text-align: center;
-  color: #333333;
-  padding: 0px 10px 10px;
-  margin-top: -1rem;
-}
+    .thankyou-wrapper h1 {
+      font: 100px Arial, Helvetica, sans-serif;
+      text-align: center;
+      color: #333333;
+      padding: 0px 10px 10px;
+      margin-top: -1rem;
+    }
 
-.thankyou-wrapper p {
-  font: 26px Arial, Helvetica, sans-serif;
-  text-align: center;
-  color: #333333;
-  padding: 5px 10px 10px;
-}
+    .thankyou-wrapper p {
+      font: 26px Arial, Helvetica, sans-serif;
+      text-align: center;
+      color: #333333;
+      padding: 5px 10px 10px;
+    }
 
-.thankyou-wrapper a {
-  font: 26px Arial, Helvetica, sans-serif;
-  text-align: center;
-  color: #ffffff;
-  display: block;
-  text-decoration: none;
-  width: 250px;
-  background: #e47425;
-  margin: 10px auto 0px;
-  padding: 15px 20px 15px;
-  border-bottom: 5px solid #f96700;
-}
+    .thankyou-wrapper a {
+      font: 26px Arial, Helvetica, sans-serif;
+      text-align: center;
+      color: #ffffff;
+      display: block;
+      text-decoration: none;
+      width: 250px;
+      background: #e47425;
+      margin: 10px auto 0px;
+      padding: 15px 20px 15px;
+      border-bottom: 5px solid #f96700;
+    }
 
-.thankyou-wrapper a:hover {
-  font: 26px Arial, Helvetica, sans-serif;
-  text-align: center;
-  color: #ffffff;
-  display: block;
-  text-decoration: none;
-  width: 250px;
-  background: #f96700;
-  margin: 10px auto 0px;
-  padding: 15px 20px 15px;
-  border-bottom: 5px solid #f96700;
-}
+    .thankyou-wrapper a:hover {
+      font: 26px Arial, Helvetica, sans-serif;
+      text-align: center;
+      color: #ffffff;
+      display: block;
+      text-decoration: none;
+      width: 250px;
+      background: #f96700;
+      margin: 10px auto 0px;
+      padding: 15px 20px 15px;
+      border-bottom: 5px solid #f96700;
+    }
 
-.top-navbar {
-  background-color: #ffffff;
-}
-img.logo {
-  width: 13.6rem;
-    height: 4.2rem;
-    margin-left: 10rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-}
+    .top-navbar {
+      background-color: #ffffff;
+    }
+    img.logo {
+      width: 13.6rem;
+      height: 4.2rem;
+      margin-left: 10rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+    a.nav-link.active {
+      /* color: #546E7A; */
+      color: rgb(0, 0, 0);
+      text-decoration: underline;
+      font-weight: 500;
+      font-family: "Lato", Sans-serif;
+      /* font-family: poppins; */
+      font-size: 14px;
+      padding-left: 50rem;
+      margin-bottom: 2rem;
+    }
+    a.nav-link.active:hover {
+      text-decoration: none;
+      color: #ff8200;
+    }
 
-  margin-left: 10rem;
-  /* margin-top: 1rem; */
-}
-a.nav-link.active {
-  /* color: #546E7A; */
-  color: rgb(0, 0, 0);
-  text-decoration: underline;
-  font-weight: 500;
-  font-family: "Lato", Sans-serif;
-  /* font-family: poppins; */
-  font-size: 14px;
-  padding-left: 50rem;
-  margin-bottom: 2rem;
-}
-a.nav-link.active:hover {
-  text-decoration: none;
-  color: #ff8200;
-}
+    h2.heading-1 {
+      /* font-family: Rubik; */
+      color: white;
+      font-family: "Georgia", Sans-serif;
+      font-size: 2.5rem;
+      padding-top: 7.3rem;
+      /* padding-top: 7.3rem; */
+    }
 
-h2.heading-1 {
-  /* font-family: Rubik; */
-  color: white;
-  font-family: "Georgia", Sans-serif;
-  font-size: 2.5rem;
-  padding-top: 7.3rem;
-  /* padding-top: 7.3rem; */
-}
+    @media (max-width: 576px) {
+      .top-navbar {
+        background-color: white;
+        margin-bottom: -1rem;
+        margin-top: -2rem;
+      }
+    }
 
-@media (max-width: 576px) {
-  .top-navbar {
-    background-color: white;
-    margin-bottom: -1rem;
-    margin-top: -2rem;
-  }
-}
+    @media (max-width: 576px) {
+      a.nav-link.active {
+        /* color: #546E7A; */
+        color: black;
+        text-decoration: underline;
+        font-weight: 500;
+        font-family: "Lato", Sans-serif;
+        /* font-family: poppins; */
+        font-size: 14px;
+        padding-left: 50rem;
+      }
+    }
+  </style>
 
-@media (max-width: 576px) {
-  a.nav-link.active {
-    /* color: #546E7A; */
-    color: black;
-    text-decoration: underline;
-    font-weight: 500;
-    font-family: "Lato", Sans-serif;
-    /* font-family: poppins; */
-    font-size: 14px;
-    padding-left: 50rem;
-  }
-}
-
-</style>
-
-
-
-
-<body>
-     <!-- Top header -->
+  <body>
+    <!-- Top header -->
     <div class="container-fluid">
       <div class="container">
         <div class="top-navbar">
@@ -187,32 +197,34 @@ h2.heading-1 {
           </div>
         </div>
       </div>
-    </div> 
-    
-    
-    
-    
-    
-    
-    
-    
-    <section class="login-main-wrapper" style="margin-top: 6rem;">
-        <div class="main-container">
-            <div class="login-process">
-                <div class="login-main-container">
-                    <div class="thankyou-wrapper"  style="background-color: aliceblue">
-                        <h1><img src="http://montco.happeningmag.com/wp-content/uploads/2014/11/thankyou.png" alt="thanks" /></h1>
-                          <p>      We have sent the eBook to the email you entered. Please check your spam/junk folder in case it is not there in the inbox. Thanks!</p>
-                          <!--<a href="home.html">Back to home</a>-->
-                                                    <a href="https://aca.obamacaresignuponline.com/">Back to Home</a>
-                       
-                          <div class="clr"></div>
-                      </div>
-                      <div class="clr"></div>
-                  </div>
-              </div>
+    </div>
+
+    <section class="login-main-wrapper" style="margin-top: 6rem">
+      <div class="main-container">
+        <div class="login-process">
+          <div class="login-main-container">
+            <div class="thankyou-wrapper" style="background-color: aliceblue">
+              <h1>
+                <img
+                  src="http://montco.happeningmag.com/wp-content/uploads/2014/11/thankyou.png"
+                  alt="thanks"
+                />
+              </h1>
+              <p>
+                We have sent the eBook to the email you entered. Please check
+                your spam/junk folder in case it is not there in the inbox.
+                Thanks!
+              </p>
+              <!--<a href="home.html">Back to home</a>-->
+              <a href="https://aca.obamacaresignuponline.com/">Back to Home</a>
+
               <div class="clr"></div>
+            </div>
+            <div class="clr"></div>
           </div>
-      </section>
-</body>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </section>
+  </body>
 </html>

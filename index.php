@@ -168,6 +168,9 @@
           font-family: 'Poppins', sans-serif;
 
       }
+      .checks-label{
+        color: white;
+      }
       .p1-title {
           font-family:'Muli', sans-serif;
           font-size: 17px;
@@ -554,7 +557,7 @@
             <!--  <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required><br>-->
             <!--<input type="text" name="z-code" class="form-control" id="exampleInputzipcode" aria-describedby="emailHelp" placeholder="Postal Code/Zip Code" required><br>-->
 
-            <!-- <label for="">Has smartphone?</label> -->
+            <label class="checks-label" >Has smartphone?</label>
             <div class="form-check">
               <input
                 type="radio"
@@ -565,7 +568,7 @@
                 required
               />
               <label class="form-check-label" for="smartphoneYes"
-                >Yes, I have a smartphone</label
+                >Yes</label
               >
             </div>
             <div class="form-check">
@@ -578,12 +581,13 @@
                 required
               />
               <label class="form-check-label" for="smartphoneNo"
-                >No, I don't have a smartphone</label
+                >No</label
               >
             </div>
             <br />
 
             
+            <label class="checks-label" >Has Attorney?</label>
 
             <div class="form-check">
               <input
@@ -595,7 +599,7 @@
                 required
               />
               <label class="form-check-label" for="smartphoneYes"
-                >Has Attorney</label
+                >Yes</label
               >
             </div>
             
@@ -609,11 +613,13 @@
                 required
               />
               <label class="form-check-label" for="smartphoneNo"
-                >Don't have a Attorney</label
+                >No</label
               >
             </div>
 
             <br />
+
+            <label class="checks-label" >Hospitalized or Treated?</label>
 
 
             <div class="form-check">
@@ -626,7 +632,7 @@
                 required
               />
               <label class="form-check-label" for="smartphoneYes"
-                >Hospitalized or Treated</label
+                >Yes</label
               >
             </div>
             <div class="form-check">
@@ -639,13 +645,14 @@
                 required
               />
               <label class="form-check-label" for="smartphoneNo"
-                >Not Hospitalized or Treated</label
+                >No</label
               >
             </div>
 
             <br />
 
           
+            <label class="checks-label" >Person at fault?</label>
 
 
             <div class="form-check">
@@ -658,7 +665,7 @@
                 required
               />
               <label class="form-check-label" for="smartphoneYes"
-                >Person at fault</label
+                >Yes</label
               >
             </div>
             <div class="form-check">
@@ -671,13 +678,15 @@
                 required
               />
               <label class="form-check-label" for="smartphoneNo"
-                >Not person at fault</label
+                >No</label
               >
             </div>
 
             <br />
 
 
+            <label class="checks-label" >Police Report?</label>
+
             <div class="form-check">
               <input
                 type="radio"
@@ -688,7 +697,7 @@
                 required
               />
               <label class="form-check-label" for="smartphoneYes"
-                >Police report</label
+                >Yes</label
               >
             </div>
             <div class="form-check">
@@ -701,7 +710,7 @@
                 required
               />
               <label class="form-check-label" for="smartphoneNo"
-                >No police report</label
+                >No</label
               >
             </div>
 
@@ -738,7 +747,6 @@
                 related to healthcare exploration.
               </label>
             </div>
-            logo
 
             <br />
 

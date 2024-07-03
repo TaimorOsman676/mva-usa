@@ -1,7 +1,7 @@
 <?php
-session_start();
-include_once 'config.php'; // parent
 
+session_start();
+include_once 'config.php';
 
 function test_input($data) {
     $data = trim($data);
@@ -17,16 +17,15 @@ if (isset($_POST['submit'])) {
     $phone = test_input($_POST['phone']);
     $state = test_input($_POST['state']);
     $zipcode = test_input($_POST['zipcode']);
-    $has_smartphone = isset($_POST['has_smartphone']) && $_POST['has_smartphone'] === 'yes' ? 'True' : 'False';
-    $has_attorney = isset($_POST['has_attorney']) && $_POST['has_attorney'] === 'yes' ? 'True' : 'False';
-    $hospitalized_or_treated = isset($_POST['hospitalized_or_treated']) && $_POST['hospitalized_or_treated'] === 'yes' ? 'True' : 'False';
-    $person_at_fault = isset($_POST['person_at_fault']) && $_POST['person_at_fault'] === 'yes' ? 'True' : 'False';
-    $police_report = isset($_POST['police_report']) && $_POST['police_report'] === 'yes' ? 'True' : 'False';
-    $incident_date = isset($_POST['incident_date']);
+    $has_smartphone = isset($_POST['has_smartphone']) && $_POST['has_smartphone'] === 'yes' ? True : false;
+    $has_attorney = isset($_POST['has_attorney']) && $_POST['has_attorney'] === 'yes' ? True : false;
+    $hospitalized_or_treated = isset($_POST['hospitalized_or_treated']) && $_POST['hospitalized_or_treated'] === 'yes' ? True : false;
+    $person_at_fault = isset($_POST['person_at_fault']) && $_POST['person_at_fault'] === 'yes' ? True : false;
+    $police_report = isset($_POST['police_report']) && $_POST['police_report'] === 'yes' ? True : false;
+    $incident_date = test_input($_POST['incident_date']);
     $trusted = test_input($_POST['xxTrustedFormCertUrl']);
 
-    $sql = "INSERT INTO `mva-usa.com`(`fname`, `lname`,`email`,`has_smartphone`, `incident_date` , `has_attorney`, `hospitalized_or_treated` ,`person_at_fault`, `police_report` ,`phone`, `state`, `zipcode`, `trusted`) VALUES ( '$fname', '$lname','$email', '$has_smartphone' , '$incident_date', '$has_attorney', '$hospitalized_or_treated' , '$person_at_fault' ,'$police_report','$phone',  '$state', '$zipcode', '$trusted')";
-
+    $sql = "INSERT INTO `mva-usa.com`(`fname`, `lname`, `email`, `has_smartphone`, `incident_date`, `has_attorney`, `hospitalized_or_treated`, `person_at_fault`, `police_report`, `phone`, `state`, `zipcode`, `trusted`) VALUES ('$fname', '$lname', '$email', '$has_smartphone', '$incident_date', '$has_attorney', '$hospitalized_or_treated', '$person_at_fault', '$police_report', '$phone', '$state', '$zipcode', '$trusted')";
 
     if (mysqli_query($conn, $sql)) {
         $retreaver_api_url = 'https://retreaverdata.com/data_writing';
@@ -40,7 +39,6 @@ if (isset($_POST['submit'])) {
             'email' => $email,
             'source_url' => 'https://mva-usa.com',
             'has_smartphone' => $has_smartphone
-
         );
         $retreaver_query_string = http_build_query($retreaver_query_params);
         $retreaver_full_url = $retreaver_api_url . '?' . $retreaver_query_string;
@@ -49,19 +47,21 @@ if (isset($_POST['submit'])) {
         curl_setopt($retreaver_ch, CURLOPT_SSL_VERIFYPEER, false);
         $retreaver_response = curl_exec($retreaver_ch);
         if (curl_errno($retreaver_ch)) {
-            echo 'cURL error: ' . curl_error($retreaver_ch);
+            error_log('cURL error: ' . curl_error($retreaver_ch));
         }
         curl_close($retreaver_ch);
         if ($retreaver_response !== false) {
-            echo 'Response from the Retreaver API: ' . $retreaver_response;
+            error_log('Response from the Retreaver API: ' . $retreaver_response);
         } else {
-            echo 'Failed to make the Retreaver API request.';
+            error_log('Failed to make the Retreaver API request.');
         }
 
         $idillo_api_url = 'https://idillo-inc.trackdrive.com/api/v1/leads';
         $idillo_query_params = array(
             'caller_id' => $phone,
             'first_name' => $fname,
+            'trusted_form_cert_url' => $trusted,
+            'email' => $email,
             'has_attorney' => $has_attorney,
             'hospitalized_or_treated' => $hospitalized_or_treated,
             'incident_date' => $incident_date,
@@ -79,20 +79,22 @@ if (isset($_POST['submit'])) {
         curl_setopt($idillo_ch, CURLOPT_SSL_VERIFYPEER, false);
         $idillo_response = curl_exec($idillo_ch);
         if (curl_errno($idillo_ch)) {
-            echo 'cURL error: ' . curl_error($idillo_ch);
+            error_log('cURL error: ' . curl_error($idillo_ch));
         }
         curl_close($idillo_ch);
         if ($idillo_response !== false) {
-            echo 'Response from the Idillo API: ' . $idillo_response;
+            error_log('Response from the Idillo API: ' . $idillo_response);
         } else {
-            echo 'Failed to make the Idillo API request.';
+            error_log('Failed to make the Idillo API request.');
         }
 
         header("Location: https://mva-usa.com/thankyou");
-        die();
+        exit();
     } else {
-        echo "Error: " . $sql . " " . mysqli_error($conn);
+        error_log("Error: " . $sql . " " . mysqli_error($conn));
     }
     mysqli_close($conn);
 }
+
+
 ?>
